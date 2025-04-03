@@ -39,6 +39,10 @@ resource "aws_instance" "instance" {
   }
 }
 
+tags = {
+  Name = "{var.tool_name}-sg"
+}
+
 resource "null_resource" "ansible_pull" {}
 provisioner "remote-exec"  {
 }

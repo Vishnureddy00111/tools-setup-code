@@ -27,8 +27,11 @@ resource "vault_generic_secret" "roboshop-dev" {
 
   data_json = <<EOT
 {
-  "foo":   "bar",
-  "pizza": "cheese"
+  "catalogue_url":   "http://catalogue-dev.vishnureddy.online:8080/",
+  "catalogue_url":   "http://cart-dev.vishnureddy.online:8080/",
+  "catalogue_url":   "http://user-dev.vishnureddy.online:8080/",
+  "catalogue_url":   "http://shipping-dev.vishnureddy.online:8080/",
+  "catalogue_url":   "http://payment-dev.vishnureddy.online:8080/",
 }
 EOT
 }

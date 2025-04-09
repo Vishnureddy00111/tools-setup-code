@@ -31,7 +31,7 @@ resource "vault_generic_secret" "roboshop-dev" {
   "catalogue_url":   "http://cart-dev.vishnureddy.online:8080/",
   "catalogue_url":   "http://user-dev.vishnureddy.online:8080/",
   "catalogue_url":   "http://shipping-dev.vishnureddy.online:8080/",
-  "catalogue_url":   "http://payment-dev.vishnureddy.online:8080/",
+  "catalogue_url":   "http://payment-dev.vishnureddy.online:8080/"
 }
 EOT
 }

@@ -43,18 +43,18 @@ tags = {
   Name = "{var.tool_name}-sg"
 }
 
-resource "null_resource" "ansible_pull" {}
-provisioner "remote-exec"  {
-}
-connection {
-  type     = "ssh"
-  user     = "ec2-user"
-  password = "DevOps321"
-  host     = "aws_instance.instance.private_ip"
-}
+# resource "null_resource" "ansible_pull" {}
+# provisioner "remote-exec"  {
+# }
+# connection {
+#   type     = "ssh"
+#   user     = "ec2-user"
+#   password = "DevOps321"
+#   host     = "aws_instance.instance.private_ip"
+# }
 resource "aws_route53_record" "record-public" {
         zone_id = var.zone_id
-        name = "{var.tool_name}.${var.domain_name}"
+        name = "${var.tool_name}.${var.domain_name}"
         type = "A"
         ttl  = "30"
         records = "[aws_instace.instance.public_ip]"
@@ -62,7 +62,7 @@ resource "aws_route53_record" "record-public" {
 
 resource "aws_route53_record" "record-internal" {
   zone_id = var.zone_id
-  name = "{var.tool_name}-internal.${var.domain_name}"
+  name = "${var.tool_name}-internal.${var.domain_name}"
   type = "A"
   ttl  = "30"
   records = "[aws_instace.instance.private_ip]"
